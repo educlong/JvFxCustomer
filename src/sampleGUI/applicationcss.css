@@ -1,0 +1,21 @@
+.btnLogin{
+    -fx-font-size:20px;
+    -fx-background-color: lightgrey;
+    -fx-padding: 5 5 5 5;
+    -fx-font-weight: bold;
+    -fx-text-fill: yellow;
+}
+.cornersNorthWest1{
+    -fx-background-color:aqua;
+}
+.cornersNorthWest2{
+    -fx-background-color:burlywood;
+}
+.treeViewDemo{
+    -fx-background-color: yellow;
+}
+.custom-dashed-border {
+    -fx-border-color: blue ;
+    -fx-border-width: 2 ;
+    -fx-border-style: dashed ;
+}

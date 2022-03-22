@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+
+<BorderPane fx:id="loMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sampleGUI.ControllerGUI">
+   <left>
+      <VBox prefHeight="200.0" prefWidth="350.0" BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane prefHeight="200.0" prefWidth="350.0">
+               <center>
+                  <HBox prefHeight="200.0" prefWidth="81.0">
+                     <children>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="190.0" prefWidth="126.0">
+                                 <children>
+                                    <ListView fx:id="lvEmployees" layoutX="7.0" layoutY="16.0" prefHeight="161.0" prefWidth="110.0" styleClass="custom-dashed-border" AnchorPane.topAnchor="16.0">
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" />
+                                       </padding>
+                                    </ListView>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                     </children>
+                  </HBox>
+               </center>
+               <right>
+                  <VBox prefHeight="200.0" prefWidth="220.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="247.0" text="Employee Management">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <VBox prefHeight="109.0" prefWidth="215.0" styleClass="custom-dashed-border">
+                           <children>
+                              <HBox prefHeight="0.0" prefWidth="350.0">
+                                 <children>
+                                    <Label prefHeight="25.0" prefWidth="134.0" text="SelectDepartment" />
+                                    <ComboBox fx:id="cboDepartments" prefHeight="25.0" prefWidth="145.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="25.0" prefWidth="215.0">
+                                 <children>
+                                    <Label prefHeight="25.0" prefWidth="134.0" text="Code:" />
+                                    <TextField fx:id="txtCodeEmployee" prefHeight="25.0" prefWidth="145.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="6.0" prefWidth="215.0">
+                                 <children>
+                                    <Label prefHeight="57.0" prefWidth="134.0" text="Name" />
+                                    <TextField fx:id="txtNameEmployee" prefHeight="25.0" prefWidth="145.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="6.0" prefWidth="215.0">
+                                 <children>
+                                    <Label prefHeight="51.0" prefWidth="134.0" text="Day Start Working" />
+                                    <TextField fx:id="txtDayStartWorkingEmployee" prefWidth="145.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="1.0" prefWidth="215.0">
+                                 <children>
+                                    <Label prefHeight="67.0" prefWidth="134.0" text="Day of Birth" />
+                                    <TextField fx:id="txtDayOfBirthEmployee" prefHeight="25.0" prefWidth="145.0" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="1.0" left="5.0" right="5.0" top="14.0" />
+                           </padding>
+                        </VBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="btnSaveEmployee" mnemonicParsing="false" text="Save">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="btnDeleteEmployee" mnemonicParsing="false" text="Delete">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="btnExitEmployee" mnemonicParsing="false" text="Exit" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </right>
+            </BorderPane>
+            <HBox prefHeight="372.0" prefWidth="350.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ScrollPane prefHeight="230.0" prefWidth="99.0">
+                           <content>
+                              <TreeView fx:id="tvCustomerGroup" prefHeight="212.0" prefWidth="348.0" />
+                           </content>
+                        </ScrollPane>
+                        <TextField fx:id="txtCodeCustomerGroup" promptText="Code Group" />
+                        <TextField fx:id="txtNameCustomerGroup" promptText="Name Group" />
+                        <HBox prefHeight="0.0" prefWidth="99.0">
+                           <children>
+                              <Button fx:id="btnSaveCustomerGroup" mnemonicParsing="false" text="Save">
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="btnDeleteCustomerGroup" mnemonicParsing="false" text="Delete" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="252.0">
+                     <children>
+                        <TableView fx:id="tblCustomers" prefHeight="220.0" prefWidth="251.0">
+                          <columns>
+                              <TableColumn fx:id="columnCodeCustomer" prefWidth="18.0" text="ID" />
+                              <TableColumn fx:id="columnNameCustomer" prefWidth="67.0" text="Name" />
+                            <TableColumn fx:id="columnPhoneCustomer" prefWidth="49.0" text="Phone" />
+                            <TableColumn fx:id="columnEmailCustomer" prefWidth="103.5" text="Email" />
+                          </columns>
+                        </TableView>
+                         <VBox prefHeight="109.0" prefWidth="215.0" styleClass="custom-dashed-border">
+                             <children>
+                                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                     <children>
+                                    <Button fx:id="btnFirstCustomer" mnemonicParsing="false" text="|&lt;" />
+                                    <Button fx:id="btnPreviousCustomer" mnemonicParsing="false" text="&lt;&lt;" />
+                                         <Button fx:id="btnSaveCustomer" mnemonicParsing="false" text="Save">
+                                             <HBox.margin>
+                                                 <Insets right="2.0" />
+                                             </HBox.margin>
+                                         </Button>
+                                         <Button fx:id="btnDeleteCustomer" mnemonicParsing="false" text="Delete">
+                                             <HBox.margin>
+                                                 <Insets right="2.0" />
+                                             </HBox.margin>
+                                         </Button>
+                                         <Button fx:id="btnNextCustomer" mnemonicParsing="false" prefHeight="25.0" prefWidth="33.0" text="&gt;&gt;" />
+                                    <Button fx:id="btnLastCustomer" mnemonicParsing="false" text="&gt;|" />
+                                     </children>
+                                 </HBox>
+
+                                 <HBox prefHeight="25.0" prefWidth="215.0">
+                                     <children>
+                                         <Label prefHeight="25.0" prefWidth="134.0" text="Code Customer:" />
+                                         <TextField fx:id="txtCodeCustomer" prefHeight="25.0" prefWidth="145.0" />
+                                     </children>
+                                 </HBox>
+                                 <HBox prefHeight="6.0" prefWidth="215.0">
+                                     <children>
+                                         <Label prefHeight="57.0" prefWidth="134.0" text="Name Customer: " />
+                                         <TextField fx:id="txtNameCustomer" prefHeight="25.0" prefWidth="145.0" />
+                                     </children>
+                                 </HBox>
+                                 <HBox prefHeight="6.0" prefWidth="215.0">
+                                     <children>
+                                         <Label prefHeight="51.0" prefWidth="134.0" text="Phone Customer: " />
+                                         <TextField fx:id="txtPhoneCustomer" prefWidth="145.0" />
+                                     </children>
+                                 </HBox>
+                                 <HBox prefHeight="1.0" prefWidth="215.0">
+                                     <children>
+                                         <Label prefHeight="67.0" prefWidth="134.0" text="Email Customer: " />
+                                         <TextField fx:id="txtEmailCustomer" prefHeight="25.0" prefWidth="145.0" />
+                                     </children>
+                                 </HBox>
+                             </children>
+                             <VBox.margin>
+                                 <Insets />
+                             </VBox.margin>
+                           <padding>
+                              <Insets left="2.0" right="2.0" />
+                           </padding>
+                         </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox BorderPane.alignment="CENTER" />
+   </center>
+   <right>
+       <VBox prefHeight="200.0" prefWidth="350.0" BorderPane.alignment="CENTER">
+           <children>
+               <HBox prefHeight="247.0" prefWidth="350.0">
+                   <children>
+                       <VBox prefHeight="328.0" prefWidth="100.0">
+                           <children>
+                               <ScrollPane prefHeight="230.0" prefWidth="99.0">
+                                   <content>
+                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="167.0" prefWidth="217.0">
+                                               <children>
+                                                    <ListView fx:id="lvCustomerGroupHibernate" prefHeight="156.0" prefWidth="200.0" />
+                                               </children>
+                                       </AnchorPane>
+                                   </content>
+                               </ScrollPane>
+                               <TextField fx:id="txtCodeCustomerGroupHibernate" promptText="Code Group" />
+                               <TextField fx:id="txtNameCustomerGroupHibernate" promptText="Name Group" />
+                               <HBox prefHeight="0.0" prefWidth="99.0">
+                                   <children>
+                                       <Button fx:id="btnSaveCustomerGroupHibernate" mnemonicParsing="false" text="Save">
+                                           <HBox.margin>
+                                               <Insets left="2.0" right="2.0" />
+                                           </HBox.margin>
+                                       </Button>
+                                       <Button fx:id="btnDeleteCustomerGroupHibernate" mnemonicParsing="false" text="Delete" />
+                                   </children>
+                               </HBox>
+                           </children>
+                       </VBox>
+                       <VBox prefHeight="330.0" prefWidth="251.0">
+                           <children>
+                               <TableView fx:id="tblCustomersHibernate" prefHeight="218.0" prefWidth="251.0">
+                                   <columns>
+                                       <TableColumn fx:id="columnCodeCustomerHibernate" prefWidth="18.0" text="ID" />
+                                       <TableColumn fx:id="columnNameCustomerHibernate" prefWidth="67.0" text="Name" />
+                                       <TableColumn fx:id="columnPhoneCustomerHibernate" prefWidth="49.0" text="Phone" />
+                                       <TableColumn fx:id="columnEmailCustomerHibernate" prefWidth="103.5" text="Email" />
+                                   </columns>
+                               </TableView>
+                               <VBox prefHeight="109.0" prefWidth="215.0" styleClass="custom-dashed-border">
+                                   <children>
+                                       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                           <children>
+                                               <Button fx:id="btnFirstCustomerHibernate" mnemonicParsing="false" text="|&lt;" />
+                                               <Button fx:id="btnPreviousCustomerHibernate" mnemonicParsing="false" text="&lt;&lt;" />
+                                               <Button fx:id="btnSaveCustomerHibernate" mnemonicParsing="false" text="Save">
+                                                   <HBox.margin>
+                                                       <Insets right="2.0" />
+                                                   </HBox.margin>
+                                               </Button>
+                                               <Button fx:id="btnDeleteCustomerHibernate" mnemonicParsing="false" text="Delete">
+                                                   <HBox.margin>
+                                                       <Insets right="2.0" />
+                                                   </HBox.margin>
+                                               </Button>
+                                               <Button fx:id="btnNextCustomerHibernate" mnemonicParsing="false" prefHeight="25.0" prefWidth="33.0" text="&gt;&gt;" />
+                                               <Button fx:id="btnLastCustomerHibernate" mnemonicParsing="false" text="&gt;|" />
+                                           </children>
+                                       </HBox>
+
+                                       <HBox prefHeight="25.0" prefWidth="215.0">
+                                           <children>
+                                               <Label prefHeight="25.0" prefWidth="134.0" text="Code Customer:" />
+                                               <TextField fx:id="txtCodeCustomerHibernate" prefHeight="25.0" prefWidth="145.0" />
+                                           </children>
+                                       </HBox>
+                                       <HBox prefHeight="6.0" prefWidth="215.0">
+                                           <children>
+                                               <Label prefHeight="57.0" prefWidth="134.0" text="Name Customer: " />
+                                               <TextField fx:id="txtNameCustomerHibernate" prefHeight="25.0" prefWidth="145.0" />
+                                           </children>
+                                       </HBox>
+                                       <HBox prefHeight="6.0" prefWidth="215.0">
+                                           <children>
+                                               <Label prefHeight="51.0" prefWidth="134.0" text="Phone Customer: " />
+                                               <TextField fx:id="txtPhoneCustomerHibernate" prefWidth="145.0" />
+                                           </children>
+                                       </HBox>
+                                       <HBox prefHeight="1.0" prefWidth="215.0">
+                                           <children>
+                                               <Label prefHeight="67.0" prefWidth="134.0" text="Email Customer: " />
+                                               <TextField fx:id="txtEmailCustomerHibernate" prefHeight="25.0" prefWidth="145.0" />
+                                           </children>
+                                       </HBox>
+                                   </children>
+                                   <VBox.margin>
+                                       <Insets />
+                                   </VBox.margin>
+                                   <padding>
+                                       <Insets left="2.0" right="2.0" />
+                                   </padding>
+                               </VBox>
+                           </children>
+                       </VBox>
+                   </children>
+               </HBox>
+           </children>
+       </VBox>
+   </right>
+   <bottom>
+      <HBox prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <top>
+      <HBox prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="334.0" prefWidth="350.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="83.0" styleClass="cornersNorthWest1">
+                     <children>
+                        <Button fx:id="btnContextMenuDemo1" mnemonicParsing="false" prefHeight="25.0" prefWidth="121.0" text="ContextMenu1">
+                           <font>
+                              <Font size="10.0" />
+                           </font></Button>
+                        <Button fx:id="btnContextMenuDemo2" mnemonicParsing="false" prefHeight="23.0" prefWidth="118.0" text="ContextMenu2">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <HBox prefHeight="2.0" prefWidth="83.0">
+                           <children>
+                              <Button id="btnNewWindow" mnemonicParsing="false" onAction="#btnNewWindow" text="New">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Button>
+                              <Button id="btnClose" mnemonicParsing="false" onAction="#btnClose" text="Close">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Button mnemonicParsing="false" onAction="#btnLogin" styleClass="btnLogin" text="Login" />
+                        <HBox prefHeight="0.0" prefWidth="83.0">
+                           <children>
+                              <CheckBox fx:id="chkJava" mnemonicParsing="false" prefHeight="13.0" prefWidth="60.0" selected="true" text="Java">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </CheckBox>
+                              <CheckBox fx:id="chkCsharp" mnemonicParsing="false" prefHeight="13.0" prefWidth="48.0" text="C#">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </CheckBox>
+                           </children>
+                        </HBox>
+                        <CheckBox fx:id="chkPython" mnemonicParsing="false" prefHeight="9.0" prefWidth="73.0" text="Python" />
+                        <Button fx:id="btnCheckDemo" minHeight="21.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="83.0" text="Checkbox" />
+                        <TextField fx:id="txtSliderDemo" prefHeight="7.0" prefWidth="83.0">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="133.0" styleClass="cornersNorthWest2">
+                     <children>
+                        <MenuBar prefHeight="21.0" prefWidth="143.0">
+                          <menus>
+                            <Menu mnemonicParsing="false" text="File">
+                              <items>
+                                    <Menu mnemonicParsing="false" text="New/Open">
+                                      <items>
+                                          <MenuItem mnemonicParsing="false" text="Open" />
+                                          <MenuItem mnemonicParsing="false" onAction="#btnNewWindow" text="New" />
+                                      </items>
+                                    </Menu>
+                                  <MenuItem mnemonicParsing="false" text="Save">
+                                      <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@images/imageDemo.png" />
+                                              </image>
+                                          </ImageView>
+                                      </graphic>
+                                  </MenuItem>
+                                <MenuItem fx:id="mnuCloseDemo" mnemonicParsing="false" text="Close">
+                                       <accelerator>
+                                          <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                       </accelerator></MenuItem>
+                              </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Edit">
+                              <items>
+                                    <CheckMenuItem mnemonicParsing="false" text="Copy" />
+                                    <CheckMenuItem mnemonicParsing="false" text="Paste" />
+                                <MenuItem mnemonicParsing="false" text="Delete" />
+                              </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Help">
+                              <items>
+                                    <RadioMenuItem mnemonicParsing="false" selected="true" text="Male">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="Gender" />
+                                       </toggleGroup>
+                                    </RadioMenuItem>
+                                    <RadioMenuItem mnemonicParsing="false" text="Female" toggleGroup="$Gender" />
+                                    <MenuItem mnemonicParsing="false" text="GUI" />
+                                <MenuItem mnemonicParsing="false" text="About" />
+                              </items>
+                            </Menu>
+                          </menus>
+                        </MenuBar>
+                        <ScrollPane prefHeight="80.0" prefWidth="133.0">
+                           <content>
+                              <TreeView fx:id="tvDemo" prefHeight="65.0" prefWidth="133.0" styleClass="treeViewDemo" />
+                           </content>
+                        </ScrollPane>
+                        <HBox prefHeight="30.0" prefWidth="133.0">
+                           <children>
+                              <Label fx:id="lblComboboxDemo" prefHeight="26.0" prefWidth="122.0" text="Language" />
+                              <ComboBox fx:id="cboDemo" prefWidth="150.0" promptText="Your Languages" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="49.0" prefWidth="133.0">
+                           <children>
+                              <VBox prefHeight="48.0" prefWidth="111.0">
+                                 <children>
+                                    <HBox prefHeight="32.0" prefWidth="117.0">
+                                       <children>
+                                          <Button fx:id="btnStart" minWidth="44.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="44.0" text="Start">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="btnCancel" minWidth="43.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="76.0" text="Cancel" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="8.0" prefWidth="108.0">
+                                       <children>
+                                          <Label fx:id="lblReadyDemo" prefHeight="18.0" prefWidth="59.0" text="Ready" />
+                                          <ProgressBar fx:id="prgrbarDemo" prefHeight="18.0" prefWidth="43.0" progress="0.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <ProgressIndicator fx:id="prgridcDemo" prefHeight="45.0" prefWidth="42.0" progress="0.0">
+                                 <HBox.margin>
+                                    <Insets top="3.0" />
+                                 </HBox.margin>
+                              </ProgressIndicator>
+                           </children>
+                        </HBox>
+                        <Slider fx:id="sldDemo" prefHeight="11.0" prefWidth="133.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="245.0" prefWidth="134.0" styleClass="cornersNorthWest1">
+                     <children>
+                        <HBox prefHeight="33.0" prefWidth="135.0">
+                           <children>
+                              <ImageView fx:id="imgDemo" fitHeight="47.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/imageDemo.png" />
+                                 </image>
+                              </ImageView>
+                               <Button fx:id="btnImgDemo" mnemonicParsing="false" prefHeight="32.0" prefWidth="135.0" text="Choose">
+                                   <graphic>
+                                       <ImageView fitHeight="20.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                           <image>
+                                               <Image url="@images/imageDemo.png" />
+                                           </image>
+                                       </ImageView>
+                                   </graphic>
+                               </Button>
+                           </children>
+                        </HBox>
+                        <TableView fx:id="tblvStudentDemo" prefHeight="152.0" prefWidth="134.0">
+                          <columns>
+                            <TableColumn fx:id="columnIdStudentDemo" prefWidth="22.0" text="id" />
+                            <TableColumn fx:id="columnNameStudentDemo" prefWidth="45.0" text="name" />
+                              <TableColumn fx:id="columnEmailStudentDemo" prefWidth="42.0" text="mail" />
+                              <TableColumn fx:id="columnAgeStudentDemo" prefWidth="25.0" text="age" />
+                          </columns>
+                        </TableView>
+                        <FlowPane prefHeight="36.0" prefWidth="134.0">
+                           <children>
+                              <TextField fx:id="txtIdStudentDemo" prefHeight="13.0" prefWidth="46.0" promptText="id" />
+                              <TextField fx:id="txtNameStudentDemo" prefHeight="25.0" prefWidth="87.0" promptText="name Student" />
+                              <TextField fx:id="txtEmailStudentDemo" prefHeight="25.0" prefWidth="88.0" promptText="email Student" />
+                              <TextField fx:id="txtAgeStudentDemo" prefHeight="25.0" prefWidth="45.0" promptText="age" />
+                              <Button fx:id="btnAddStudentDemo" mnemonicParsing="false" prefHeight="25.0" prefWidth="33.0" text="Add">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font></Button>
+                              <Button fx:id="btnDeleteStudentDemo" mnemonicParsing="false" prefHeight="25.0" prefWidth="44.0" text="Delete">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font></Button>
+                              <Button fx:id="btnDetailStudentDemo" mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="Detail">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </FlowPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox>
+               <children>
+                  <VBox prefHeight="31.0" prefWidth="400.0">
+                     <children>
+                        <HBox prefHeight="33.0" prefWidth="400.0">
+                           <children>
+                              <Button fx:id="btnPreviousWebviewDemo" minWidth="37.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="50.0" text="&lt;" />
+                              <Button fx:id="btnNextWebviewDemo" mnemonicParsing="false" prefHeight="32.0" prefWidth="50.0" text="&gt;" />
+                              <TextField fx:id="txtAddressBarDemo" prefHeight="26.0" prefWidth="301.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <ScrollPane prefHeight="326.0" prefWidth="375.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="178.0" prefWidth="371.0">
+                           <children>
+                              <WebView fx:id="webviewDemo" prefHeight="178.0" prefWidth="370.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+            <HBox prefHeight="83.0" prefWidth="400.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="186.0" prefWidth="200.0">
+                     <children>
+                        <PieChart fx:id="pieChartDemo" labelLineLength="5.0" legendSide="LEFT" prefHeight="187.0" prefWidth="200.0" title="User Rate of Languages" />
+                        <HBox prefHeight="9.0" prefWidth="200.0">
+                           <children>
+                              <Label text="C#" />
+                              <TextField fx:id="txtCsharpPiechartDemo" prefHeight="25.0" prefWidth="27.0" />
+                              <Label text="Java" />
+                              <TextField fx:id="txtJavaPiechartDemo" prefHeight="25.0" prefWidth="27.0" />
+                              <Label text="Python" />
+                              <TextField fx:id="txtPythonPiechartDemo" prefHeight="25.0" prefWidth="27.0" />
+                              <Button fx:id="btnLoadPiechartDemo" alignment="CENTER" mnemonicParsing="false" text="Load" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="263.0" prefWidth="200.0">
+                     <children>
+                        <LineChart fx:id="lineChartDemo" prefHeight="200.0" prefWidth="138.0" title="Bieu do thu nhap">
+                          <xAxis>
+                            <CategoryAxis label="Thang" side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis label="Thu nhap" side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>
